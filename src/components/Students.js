@@ -3,9 +3,10 @@ import Student from './Student';
 import { useGetJSON } from '../hooks/useGetJSON';
 
 const Students = (props) => {
-  const { data, loading } = useGetJSON('http://18.157.77.111/students');
+  const { data: students, loading } = useGetJSON(
+    'http://18.157.77.111/students'
+  );
 
-  const students = data;
   if (loading) {
     return <p>Loading the list of students...</p>;
   }

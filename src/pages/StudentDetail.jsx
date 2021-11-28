@@ -6,11 +6,14 @@ import { Formik, Field, Form } from 'formik';
 
 function StudentDetail(props) {
   const [editMode, setEditMode] = useState(false);
-  const student = data;
+
   const { data, loading } = useGetJSON(
     'http://18.157.77.111/students/' + props.student.id
   );
-
+  const student = data;
+  if (loading) {
+    return <p>Loading student data...</p>;
+  }
   const initials = student.firstName[0] + student.lastName[0];
 
   return (
@@ -37,35 +40,12 @@ function StudentDetail(props) {
           }}
         >
           <Form className="flex flex-col gap-1">
-            <Field
-              name="firstName"
-              type="text"
-              className="p-2 border-2 border-indigo-600 rounded-md"
-            />
-            <Field
-              name="lastName"
-              type="text"
-              className="p-2 border-2 border-indigo-600 rounded-md"
-            />
-            <Field
-              name="gender"
-              type="text"
-              className="p-2 border-2 border-indigo-600 rounded-md"
-            />
-            <Field
-              name="house"
-              type="text"
-              className="p-2 border-2 border-indigo-600 rounded-md"
-            />
-            <Field
-              name="year"
-              type="number"
-              className="p-2 border-2 border-indigo-600 rounded-md"
-            />
-            <button
-              type="submit"
-              className="p-2 bg-indigo-600 text-white rounded-md"
-            >
+            <Field name="firstName" type="text" className="input" />
+            <Field name="lastName" type="text" className="input" />
+            <Field name="gender" type="text" className="input" />
+            <Field name="house" type="text" className="input" />
+            <Field name="year" type="number" className="input" />
+            <button type="submit" className="input bg-indigo-600 text-white">
               Submit
             </button>
           </Form>

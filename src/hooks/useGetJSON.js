@@ -11,7 +11,8 @@ export function useGetJSON(url) {
         setData(json);
         setLoading(false);
       });
-  }, [url]);
+  }, []);
 
   return { data, loading };
 }
+//? [url]?
