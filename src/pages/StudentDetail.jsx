@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useGetJSON } from '../hooks/useGetJSON';
 import { Maybe } from '../components/Maybe';
 import Button from '../components/Button';

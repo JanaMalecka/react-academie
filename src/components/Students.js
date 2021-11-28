@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Student from './Student';
 import { useGetJSON } from '../hooks/useGetJSON';
 
